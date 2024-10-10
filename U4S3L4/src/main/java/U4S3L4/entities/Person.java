@@ -18,6 +18,7 @@ public class Person {
     @Column(nullable = false)
     private String email;
     private LocalDate birthday;
+    @Enumerated(EnumType.STRING)
     private Genders gender;
 
     public Person() {}

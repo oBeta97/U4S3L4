@@ -8,7 +8,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "events")
-public class Event {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Event {
 
     @Id
     @GeneratedValue
@@ -19,6 +20,7 @@ public class Event {
     private LocalDate eventDt;
     private String description;
     @Column(nullable = false, name = "event_type")
+    @Enumerated(EnumType.STRING)
     private EventType eventType;
     @Column(nullable = false, name = "nr_max_partecipants")
     private int nrMaxPartecipants;

@@ -19,6 +19,7 @@ public class Partecipation {
     @JoinColumn(name = "event_id", nullable = false)
     private Event event;
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private PartecipationStates state;
 
     public Partecipation() {}
